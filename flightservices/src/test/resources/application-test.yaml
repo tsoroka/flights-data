@@ -1,0 +1,2 @@
+flightservices
+  datafile: ./src/test/resources/flightsdata/flights.csv

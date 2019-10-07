@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: Web for Flight Services
+  thymeleaf:
+    suffix: .html
+
+server:
+  servlet:
+    context-path: /ui
+  port: 8777
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+
+

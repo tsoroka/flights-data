@@ -1,0 +1,5 @@
+rootProject.name = 'flight-demo-app'
+
+include 'flightservices'
+include 'service-registry'
+include 'web'

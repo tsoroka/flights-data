@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: flight-services
+
+server:
+  servlet:
+    context-path: /flightservices
+  port: 8000
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetch-registry: false
+
+flightservices:
+  datafile: /home/apps/flightservices/flights.csv

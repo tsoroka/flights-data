@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Flights Data</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <table style="width:100%; border: 1px solid black">
+        <tr>
+            <th>Departure Time</th>
+            <th>Destination</th>
+            <th>Destination Airport</th>
+            <th>Flight Number</th>
+            <th>Departured</th>
+            <th>Sunday</th>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+            <th>Saturday</th>
+        </tr>
+        <tr th:each="flight: ${flights}">
+            <td th:text="${flight.departureTime}" />
+            <td th:text="${flight.destination}" />
+            <td th:text="${flight.destinationAirport}" />
+            <td th:text="${flight.flightNumber}" />
+
+            <!-- Is departured -->
+            <div th:if="${flight.departured}">
+                <td>Departured</td>
+            </div>
+            <div th:unless="${flight.departured}">
+                <td>Not Departured</td>
+            </div>
+
+            <div th:each="dayOfWeek: ${flight.daysOfWeek}">
+                <div th:if="${dayOfWeek == 1}">
+                    <td>x</td>
+                </div>
+                <div th:unless="${dayOfWeek == 1}">
+                    <td></td>
+                </div>
+            </div>
+        </tr>
+    </table>
+</body>
+</html>
